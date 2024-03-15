@@ -79,12 +79,6 @@ int main(){
         printf("Ошбика при работе с памятью");
         return -1;
     }
-    // if(m1 != n2){
-    //     memory_matrix_off(&matrix1, n1);
-    //     memory_matrix_off(&matrix2, n2);
-    //     printf("Несогласованные матрицы");
-    //     return -2;
-    // }
     if(memory_matrix_on(&matrix_out, n1, m2) == -1){
         memory_matrix_off(&matrix1, n1);
         memory_matrix_off(&matrix2, n2);
@@ -103,9 +97,6 @@ int main(){
     printf("%d\n", det1);
     find_determinant(matrix1, n1, &det2);
     printf("%d\n", det2);
-    //matrix_mult(&matrix1, &matrix2, &matrix_out, n1, m1, n2, m2);
-
-    //matrix_printer(&matrix_out, n1, m2);
     printf("\n");
     
 
