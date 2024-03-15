@@ -4,9 +4,7 @@
 #include<stdlib.h>
 #include<math.h>
 double eps0 = 0.00000001;
-//добавлена реализация atof и atoi 
-// теперь сравнение на кратность через %
-// atoi -> my_atoi
+
 int find_root(double a, double b, double c, double* x1, double* x2);
 int check_cnt_argv(char* argv, double* znach);
 int is_triangle(int num1, int num2, int num3);
@@ -106,16 +104,6 @@ int main(int argc, char* argv[]){
         flag = find_root(a,  b,  c, &x1, &x2);
         printf("%lf %lf %lf\n", a, b, c);
         printer(1, flag, x1, x2);
-        // flag = find_root(a,  c,  b, &x1, &x2);
-        // printer(2, flag, &x1, &x2);
-        // flag = find_root(b,  c,  a, &x1, &x2);
-        // printer(3, flag, &x1, &x2);
-        // flag = find_root(b,  a,  c, &x1, &x2);
-        // printer(4, flag, &x1, &x2);
-        // flag = find_root(c,  b,  a, &x1, &x2);
-        // printer(5, flag, &x1, &x2);
-        // flag = find_root(c,  a,  b, &x1, &x2);
-        //printer(6, flag, &x1, &x2);
     }
     if(argv[1][1] == 'm'){
         if(argc != 4){
@@ -140,11 +128,6 @@ int main(int argc, char* argv[]){
             printf("Zero! sos!!!");
             return -3;
         }
-        // double res = num1/num2;
-        // if(((double)num1/num2 - floor(num1/num2)) < eps){
-        //     printf("кратно");
-        //     return 0;
-        // }
         if(num1 % num2 == 0){
             printf("кратно\n");
             return 0;
@@ -171,8 +154,7 @@ int main(int argc, char* argv[]){
 
         my_atoi(&num1, argv[2]);
         my_atoi(&num2, argv[3]);
-        my_atoi(&num2, argv[4]);
-        //printf("%d %d %d", num1, num2, num3);   
+        my_atoi(&num2, argv[4]); 
         if(is_triangle(num1, num2, num3) == 1) printf("Yea");
         else{
             printf("No");
